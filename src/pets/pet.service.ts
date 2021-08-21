@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Owner } from './../owners/owner.entity';
 import { PetHealthStatus } from './pet-health-status.enum';
 import { CreatePetDTO } from './dtos/create-pet.dto';
@@ -8,6 +9,10 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
+=======
+import { PetRepository } from './pet.repository';
+import { Injectable } from '@nestjs/common';
+>>>>>>> a56ed1ad77ac6a8c081ebed546327f3769553f51
 import { InjectRepository } from '@nestjs/typeorm';
 @Injectable()
 export class PetService {
@@ -15,6 +20,7 @@ export class PetService {
     @InjectRepository(PetRepository)
     private petRepository: PetRepository,
   ) {}
+<<<<<<< HEAD
   async getPetById(id: number, owner: Owner): Promise<Pet> {
     return await this.petRepository.findOne({
       where: { id, ownerID: owner.id },
@@ -45,5 +51,9 @@ export class PetService {
     pet.status = status;
     await pet.save();
     return pet;
+=======
+  getPet() {
+    return this.petRepository.find();
+>>>>>>> a56ed1ad77ac6a8c081ebed546327f3769553f51
   }
 }

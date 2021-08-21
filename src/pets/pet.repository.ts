@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Owner } from './../owners/owner.entity';
 import { CreatePetDTO } from './dtos/create-pet.dto';
 import { GetPetFilterDTO } from './dtos/get-pet-filter.dto';
@@ -35,3 +36,14 @@ export class PetRepository extends Repository<Pet> {
     return pet;
   }
 }
+=======
+import { GetPetFilterDTO } from './dtos/get-pet-filter.dto';
+import { EntityRepository, Repository } from 'typeorm';
+import { Pet } from './pet.entity';
+@EntityRepository(Pet)
+export class PetRepository extends Repository<Pet> {
+  async getPet(gePettFilterDTO: GetPetFilterDTO) {
+    const query = this.createQueryBuilder('pet');
+  }
+}
+>>>>>>> a56ed1ad77ac6a8c081ebed546327f3769553f51

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Owner } from './../owners/owner.entity';
 import { PetHealthStatus } from './pet-health-status.enum';
 import { CreatePetDTO } from './dtos/create-pet.dto';
@@ -56,4 +57,17 @@ export class PetController {
   ): Promise<Pet> {
     return this.petService.updatePet(id, status, owner);
   }
+=======
+import { PetService } from './pet.service';
+import { Controller, Get } from '@nestjs/common';
+
+@Controller('pet')
+export class PetController {
+ constructor(private petService: PetService){
+
+ }
+ @Get()
+ getPet(){
+ }
+>>>>>>> a56ed1ad77ac6a8c081ebed546327f3769553f51
 }
